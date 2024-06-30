@@ -54,7 +54,7 @@ for article in articles:
     ic(category)
 
     # reply_count = soup.select_one(".txt_block > span:nth-of-type(2)").text.split(' ')[1]
-    reply_count = soup.select_one(".txt_block > span:nth-of-type(2)").text.split("답변수")[1].strip()
+    reply_count = article.select_one(".txt_block > span:nth-of-type(2)").text.split("답변수")[1].strip()
     ic(reply_count)
 
     ic.enable()
