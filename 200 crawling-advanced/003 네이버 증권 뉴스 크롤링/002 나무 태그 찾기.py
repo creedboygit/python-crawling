@@ -21,6 +21,10 @@ for item in articles:
     title = select_dl.select_one(".articleSubject").text.strip()
     ic(title)
 
+    # 링크
+    link = "https://finance.naver.com" + select_dl.select_one(".articleSubject > a").attrs["href"]
+    ic(link)
+
     # 내용
     articleSummary_dd = select_dl.select_one(".articleSummary").contents
     # ic(articleSummary_dd)
