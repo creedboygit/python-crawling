@@ -1,5 +1,6 @@
 # 2단계
 # 나무 태그 찾기
+# 1페이지 - 10개 글 - 제목, 링크, 날짜, 카테고리, 답변수
 import time
 
 import requests
@@ -11,38 +12,52 @@ response = requests.get("https://kin.naver.com/search/list.naver?query=%EC%82%BC
 html = response.text
 soup = BeautifulSoup(html, 'html.parser')
 
-title = soup.select_one("._nclicks\\:kin\\.txt").text.strip()
-ic(title)
+# 나무 태그 찾기
+articles = soup.select(".basic1 > li")
+# ic(articles)
 
-title = soup.select_one("._searchListTitleAnchor").text.strip()
-ic(title)
+i = 1
+for article in articles:
+    ic(i)
 
-title_select = soup.select_one("._nclicks\\:kin\\.txt._searchListTitleAnchor")
-title = title_select.text.strip()
-ic(title)
+    title = article.select_one("._nclicks\\:kin\\.txt").text.strip()
+    ic.disable()
+    ic(title)
 
-link = title_select.attrs['href']
-ic(link)
+    title = article.select_one("._searchListTitleAnchor").text.strip()
+    ic(title)
 
-date = soup.select_one(".txt_inline").text
-ic(date)
+    title_select = article.select_one("._nclicks\\:kin\\.txt._searchListTitleAnchor")
+    title = title_select.text.strip()
+    ic(title)
 
-# data_block = soup.select_one(".txt_block").contents
-# ic(data_block)
+    link = title_select.attrs['href']
+    ic(link)
 
-#
-# ic(data_block[1].text)
-# ic(data_block[3].text)
-#
-# category = data_block[1].text + " > " + data_block[3].text
-# ic(category)
-#
-# reply_count = data_block[7].text.split(" ")[1]
-# ic(reply_count)
+    date = article.select_one(".txt_inline").text
+    ic(date)
 
-category = soup.select_one(".txt_block > a:nth-of-type(2)").text
-ic(category)
+    # data_block = article.select_one(".txt_block").contents
+    # ic(data_block)
 
-# reply_count = soup.select_one(".txt_block > span:nth-of-type(2)").text.split(' ')[1]
-reply_count = soup.select_one(".txt_block > span:nth-of-type(2)").text.split("답변수")[1].strip()
-ic(reply_count)
+    #
+    # ic(data_block[1].text)
+    # ic(data_block[3].text)
+    #
+    # category = data_block[1].text + " > " + data_block[3].text
+    # ic(category)
+    #
+    # reply_count = data_block[7].text.split(" ")[1]
+    # ic(reply_count)
+
+    category = article.select_one(".txt_block > a:nth-of-type(2)").text
+    ic(category)
+
+    # reply_count = soup.select_one(".txt_block > span:nth-of-type(2)").text.split(' ')[1]
+    reply_count = soup.select_one(".txt_block > span:nth-of-type(2)").text.split("답변수")[1].strip()
+    ic(reply_count)
+
+    ic.enable()
+    ic(title, link, date, category, reply_count)
+
+    i += 1
