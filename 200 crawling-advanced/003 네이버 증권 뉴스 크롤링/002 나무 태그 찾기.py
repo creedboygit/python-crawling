@@ -15,6 +15,7 @@ for item in articles:
 
     # 썸네일
     thumb = select_dl.select_one(".thumb > a > img").attrs["src"]
+    ic.disable()
     ic(thumb)
 
     # 제목
@@ -37,6 +38,9 @@ for item in articles:
 
     date = select_dl.select_one(".wdate").text.strip()
     ic(date)
+
+    ic.enable()
+    ic(thumb, title, link, contents, press, date)
 
     ic("\n\n")
 
