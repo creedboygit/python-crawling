@@ -58,7 +58,7 @@ for page in range(9, 1000):
     # 맨 마지막 페이지라면 break
     pgRR = soup.select_one(".pgRR")
     ic(pgRR)
-    if pgRR == None:
+    if pgRR is None:
         break
 
 # 데이터 프레임 생성
