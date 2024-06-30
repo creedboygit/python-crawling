@@ -65,5 +65,8 @@ for page in range(9, 1000):
 df = pd.DataFrame(data, columns=['썸네일', '제목', '링크', '내용', '언론사', '날짜'])
 
 # 엑셀 저장
-df.to_excel("naver_finance_crawling.xlsx")
+# df.to_excel("naver_finance_crawling.xlsx")
+
+# 한글 깨짐 방지, index 번호 컬럼 미노출
+df.to_csv("naver_finanace_crawling.csv", index=False, encoding="utf-8-sig")
 
