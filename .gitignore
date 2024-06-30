@@ -780,3 +780,4 @@ fabric.properties
 /100 crawling-basic/001 정적 페이지 크롤링/result.xlsx
 misc.xml
 *.xlsx
+*.csv
