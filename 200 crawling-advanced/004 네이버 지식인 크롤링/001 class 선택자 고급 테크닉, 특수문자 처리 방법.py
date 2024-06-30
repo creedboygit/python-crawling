@@ -27,15 +27,21 @@ ic(link)
 date = soup.select_one(".txt_inline").text
 ic(date)
 
-data_block = soup.select_one(".txt_block").contents
-ic(data_block)
+# data_block = soup.select_one(".txt_block").contents
+# ic(data_block)
+#
+# ic(data_block[1].text)
+# ic(data_block[3].text)
+#
+# category = data_block[1].text + " > " + data_block[3].text
+# ic(category)
+#
+# reply_count = data_block[7].text.split(" ")[1]
+# ic(reply_count)
 
-ic(data_block[1].text)
-ic(data_block[3].text)
-
-category = data_block[1].text + " > " + data_block[3].text
+category = soup.select_one(".txt_block > a:nth-of-type(2)").text
 ic(category)
 
-reply_count = data_block[7].text.split(" ")[1]
+# reply_count = soup.select_one(".txt_block > span:nth-of-type(2)").text.split(' ')[1]
+reply_count = soup.select_one(".txt_block > span:nth-of-type(2)").text.split("답변수")[1].strip()
 ic(reply_count)
-
