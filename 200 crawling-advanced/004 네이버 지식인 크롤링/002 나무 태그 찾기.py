@@ -29,6 +29,7 @@ ic(date)
 
 # data_block = soup.select_one(".txt_block").contents
 # ic(data_block)
+
 #
 # ic(data_block[1].text)
 # ic(data_block[3].text)
