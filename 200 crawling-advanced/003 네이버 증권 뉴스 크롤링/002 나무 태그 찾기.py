@@ -29,8 +29,8 @@ for item in articles:
     articleSummary_dd = select_dl.select_one(".articleSummary").contents
     # ic(articleSummary_dd)
 
-    description = articleSummary_dd[0].strip()
-    ic(description)
+    contents = articleSummary_dd[0].strip()
+    ic(contents)
 
     press = articleSummary_dd[1].text.strip()
     ic(press)
