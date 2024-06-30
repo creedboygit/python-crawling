@@ -7,9 +7,13 @@ from bs4 import BeautifulSoup
 from icecream import ic
 import pandas as pd
 
-input_page = 3
+# input_page = 3
 
-for page in range(1, input_page):
+input_page = int(input("몇 페이지까지 수집하시겠습니까? >>> "))
+
+data = []
+# for page in range(1, input_page):
+for page in range(1, input_page + 1):
     response = requests.get(f"https://kin.naver.com/search/list.naver?query=%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90&page={page}")
     html = response.text
     soup = BeautifulSoup(html, 'html.parser')
@@ -48,6 +52,17 @@ for page in range(1, input_page):
         ic.enable()
         ic(title, link, date, category, reply_count)
 
+        data.append([title, link, date, category, reply_count])
+
         i += 1
 
     time.sleep(1)
+
+# 데이터 프레임 생성
+df = pd.DataFrame(data, columns=['제목', '링크', '날짜', '카테고리', '답변수'])
+
+# 엑셀 저장
+# df.to_excel("naver_finance_crawling.xlsx")
+
+# 한글 깨짐 방지, index 번호 컬럼 미노출
+df.to_csv("naver_kin_crawling.csv", index=False, encoding="utf-8-sig")
