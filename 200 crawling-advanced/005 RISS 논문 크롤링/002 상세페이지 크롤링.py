@@ -4,19 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 from icecream import ic
 import pandas as pd
-
-''' 상세 페이지 요청 함수 '''
-def get_detail(link):
-    # 헤더 추가
-    header = {
-        "referer": link.encode('utf-8')
-    }
-
-    detail_response = requests.get(link, headers=header)
-    detail_html = detail_response.text
-    detail_soup = BeautifulSoup(detail_html, 'html.parser')
-
-    return detail_soup
+import func
 
 # 파라미터 종류가 많을 경우 꿀팁
 params = {
@@ -59,7 +47,7 @@ for article in articles[:2]:
 
     ''' 상세 페이지 요청 시작 '''
     # 헤더 추가
-    detail_soup = get_detail(link)
+    detail_soup = func.get_detail(link)
 
     press = detail_soup.select_one(".infoDetailL > ul > li:nth-child(2) > div > p > a").text
     ic(press)
