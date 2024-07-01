@@ -8,6 +8,7 @@ from icecream import ic
 import pandas as pd
 # from openpyxl.reader.excel import load_workbook
 from openpyxl import load_workbook
+from openpyxl.styles import Border, Side
 
 # input_page = 3
 
@@ -21,7 +22,8 @@ else:
 data = []
 # for page in range(1, input_page):
 for page in range(1, input_page + 1):
-    response = requests.get(f"https://kin.naver.com/search/list.naver?query=%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90&page={page}")
+    response = requests.get(
+        f"https://kin.naver.com/search/list.naver?query=%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90&page={page}")
     html = response.text
     soup = BeautifulSoup(html, 'html.parser')
 
@@ -83,6 +85,17 @@ ws.column_dimensions['b'].width = 100
 ws.column_dimensions['c'].width = 30
 ws.column_dimensions['d'].width = 30
 ws.column_dimensions['e'].width = 10
+
+# 테두리 설정
+thin_border = Border(left=Side(style='thin'),
+                     right=Side(style='thin'),
+                     top=Side(style='thin'),
+                     bottom=Side(style='thin'))
+
+# 모든 셀에 테두리 적용
+for row in ws.iter_rows():
+    for cell in row:
+        cell.border = thin_border
 
 # 각 열의 너비를 200으로 설정
 # for column_cells in ws.columns:
