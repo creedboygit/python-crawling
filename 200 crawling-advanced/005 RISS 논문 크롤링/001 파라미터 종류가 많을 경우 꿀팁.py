@@ -1,4 +1,3 @@
-# 1단계
 import time
 
 import requests
