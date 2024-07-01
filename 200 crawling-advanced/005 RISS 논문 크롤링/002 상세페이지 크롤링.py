@@ -34,18 +34,18 @@ soup = BeautifulSoup(html, 'html.parser')
 articles = soup.select(".srchResultListW > ul > li")
 ic(len(articles))
 
-for article in articles:
+# for article in articles:
+for article in articles[:2]:
     # link = article.select_one("div.cont.ml60 > p.title > a").attrs['href']
     link = "https://www.riss.kr" + article.select_one(".title > a").attrs['href']
-    # ic(link)
+    ic(link)
     # print(link)
     # title = article.select_one("div.cont.ml60 > p.title > a").text
     title = article.select_one(".title > a").text
-    # ic(title)
+    ic(title)
 
-    ic(link, title)
-
-    # 상세 페이지 요청
+    ''' 상세 페이지 요청 시작 '''
+    # 헤더 추가
     header = {
         "referer": link.encode('utf-8')
     }
@@ -58,3 +58,6 @@ for article in articles:
 
     press = detail_soup.select_one(".infoDetailL > ul > li:nth-child(2) > div > p > a").text
     ic(press)
+    ''' 상세 페이지 요청 끝 '''
+
+    ic("\n\n")
