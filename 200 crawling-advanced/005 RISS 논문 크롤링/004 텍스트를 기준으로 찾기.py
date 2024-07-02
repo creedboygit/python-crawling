@@ -64,10 +64,20 @@ for article in articles[:2]:
     ic(press_year)
 
     ''' 주제어'''
+    # keywords_arr = []
+    # keywords = detail_soup.select(".infoDetailL > ul > li:nth-child(7) > div > p > a")
+    # for keyword in keywords:
+    #     keywords_arr.append(keyword.text.strip())
+    #
+    # ic(keywords_arr)
+
+    keywords = detail_soup.select_one(".infoDetailL > ul > li:nth-child(7) > div").text.split(";")
+    # ic(keywords)
+
     keywords_arr = []
-    keywords = detail_soup.select(".infoDetailL > ul > li:nth-child(7) > div > p > a")
+
     for keyword in keywords:
-        keywords_arr.append(keyword.text.strip())
+        keywords_arr.append(keyword.strip())
 
     ic(keywords_arr)
 
