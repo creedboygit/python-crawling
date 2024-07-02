@@ -56,11 +56,21 @@ for article in articles[:10]:
     # 헤더 추가
     detail_soup = func.get_detail(link)
 
-    press = detail_soup.select_one(".infoDetailL > ul > li:nth-child(2) > div > p > a").text
+    ''' 발행 기관 '''
+    # press = detail_soup.select_one(".infoDetailL > ul > li:nth-child(2) > div > p > a").text
+    # 텍스트로 찾기
+    if detail_soup.find("span", string="발행기관"):
+        press = detail_soup.find("span", string="발행기관").find_next_sibling().text
+    else:
+        press = ''
     ic(press)
 
     ''' 발행년도 '''
-    press_year = detail_soup.select_one(".infoDetailL > ul > li:nth-child(5) > div > p").text
+    # press_year = detail_soup.select_one(".infoDetailL > ul > li:nth-child(5) > div > p").text
+    if detail_soup.find("span", string="발행연도"):
+        press_year = detail_soup.find("span", string="발행연도").find_next_sibling().text
+    else:
+        press_year = ''
     ic(press_year)
 
     ''' 주제어'''
@@ -71,16 +81,18 @@ for article in articles[:10]:
     #
     # ic(keywords_arr)
 
-    keywords = detail_soup.select_one(".infoDetailL > ul > li:nth-child(7) > div").text.split(";")
-    # ic(keywords)
+    # keywords = detail_soup.select_one(".infoDetailL > ul > li:nth-child(7) > div").text.split(";")
+    if detail_soup.find("span", string="주제어"):
+        keywords = detail_soup.find("span", string="주제어").find_next_sibling().text.split(";")
+        ''' 리스트 컴프리헨션 '''
+        keywords_arr = [keyword.strip().replace("\u3000", "") for keyword in keywords]
+    else:
+        keywords_arr = ''
 
     # keywords_arr = []
     #
     # for keyword in keywords:
     #     keywords_arr.append(keyword.strip())
-
-    ''' 리스트 컴프리헨션 '''
-    keywords_arr = [keyword.strip() for keyword in keywords]
 
     ic(keywords_arr)
 
