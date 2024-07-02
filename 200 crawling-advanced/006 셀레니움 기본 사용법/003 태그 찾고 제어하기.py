@@ -1,5 +1,7 @@
 from selenium import webdriver
 from icecream import ic
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 # 크롬 드라이버 생성
 driver = webdriver.Chrome()
@@ -8,8 +10,6 @@ driver = webdriver.Chrome()
 driver.get("https://www.naver.com")
 
 # 태그 찾기
-from selenium.webdriver.common.by import By
-
 # element = driver.find_element(By.CSS_SELECTOR, "#query")
 search = driver.find_element(By.ID, "query")
 ic(search)
@@ -21,5 +21,4 @@ search.click()
 search.send_keys("카즈하")
 
 # 키 입력
-from selenium.webdriver.common.keys import Keys
 search.send_keys(Keys.ENTER)
