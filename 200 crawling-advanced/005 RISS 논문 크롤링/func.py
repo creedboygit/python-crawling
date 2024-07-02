@@ -9,7 +9,7 @@ def get_detail(link):
         "referer": link.encode('utf-8')
     }
 
-    detail_response = requests.get(link, headers=header)
+    detail_response = requests.get(link, headers=header, verify=False)
     detail_html = detail_response.text
     detail_soup = BeautifulSoup(detail_html, 'html.parser')
 
