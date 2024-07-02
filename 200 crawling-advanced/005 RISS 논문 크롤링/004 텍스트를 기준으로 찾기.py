@@ -64,8 +64,8 @@ for article in articles[:10]:
     ic(press_year)
 
     ''' 주제어'''
-    # keywords_arr = []
     # keywords = detail_soup.select(".infoDetailL > ul > li:nth-child(7) > div > p > a")
+    # keywords_arr = []
     # for keyword in keywords:
     #     keywords_arr.append(keyword.text.strip())
     #
