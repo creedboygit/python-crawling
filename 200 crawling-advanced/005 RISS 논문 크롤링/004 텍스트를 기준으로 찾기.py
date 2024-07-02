@@ -84,16 +84,16 @@ for article in articles[:10]:
     # keywords = detail_soup.select_one(".infoDetailL > ul > li:nth-child(7) > div").text.split(";")
     if detail_soup.find("span", string="주제어"):
         keywords = detail_soup.find("span", string="주제어").find_next_sibling().text.split(";")
-        ''' 리스트 컴프리헨션 '''
-        keywords_arr = [keyword.strip().replace("\u3000", "") for keyword in keywords]
     else:
-        keywords_arr = ''
+        keywords = []
 
     # keywords_arr = []
     #
     # for keyword in keywords:
     #     keywords_arr.append(keyword.strip())
 
+    ''' 리스트 컴프리헨션 '''
+    keywords_arr = [keyword.strip().replace("\u3000", "") for keyword in keywords]
     ic(keywords_arr)
 
     ''' 상세 페이지 끝 '''
