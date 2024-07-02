@@ -74,10 +74,13 @@ for article in articles[:2]:
     keywords = detail_soup.select_one(".infoDetailL > ul > li:nth-child(7) > div").text.split(";")
     # ic(keywords)
 
-    keywords_arr = []
+    # keywords_arr = []
+    #
+    # for keyword in keywords:
+    #     keywords_arr.append(keyword.strip())
 
-    for keyword in keywords:
-        keywords_arr.append(keyword.strip())
+    ''' 리스트 컴프리헨션 '''
+    keywords_arr = [keyword.strip() for keyword in keywords]
 
     ic(keywords_arr)
 
