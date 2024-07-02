@@ -39,7 +39,7 @@ articles = soup.select(".srchResultListW > ul > li")
 ic(len(articles))
 
 # for article in articles:
-for article in articles[:2]:
+for article in articles[:10]:
 
     ''' 링크 '''
     # link = article.select_one("div.cont.ml60 > p.title > a").attrs['href']
