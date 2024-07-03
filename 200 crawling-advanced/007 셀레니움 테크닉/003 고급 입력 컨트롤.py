@@ -21,9 +21,9 @@ search.click()
 # 문자 입력
 search.send_keys("카즈하")
 
-time.sleep(3)
-
 # 입력값 삭제
-search.clear()
+# time.sleep(3)
+# search.clear()
 
 # 순차적 키 입력
+search.send_keys(Keys.CONTROL, 'a')
