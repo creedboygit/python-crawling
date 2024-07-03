@@ -22,3 +22,9 @@ ic(select_tag)
 
 # index로 선택
 Select(select_tag[0]).select_by_index(2)
+
+# value로 선택
+Select(select_tag[0]).select_by_value('55')
+
+# 텍스트로 선택
+Select(select_tag[0]).select_by_visible_text("대신증권")
