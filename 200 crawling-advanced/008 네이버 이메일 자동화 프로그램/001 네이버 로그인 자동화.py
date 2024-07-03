@@ -10,6 +10,7 @@ import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
+import pyperclip
 
 # user_id = "아이디"
 # user_pw = "비밀번호"
@@ -32,14 +33,21 @@ driver.get("https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver
 time.sleep(1)
 
 # 아이디 입력
+# 아이디 복사
+pyperclip.copy(user_id)
+
 id = driver.find_element(By.CSS_SELECTOR, "#id")
-id.send_keys(user_id)
+id.send_keys(Keys.CONTROL, 'v')
+# id.send_keys(user_id)
 time.sleep(1)
 
 # 비밀번호 입력
+pyperclip.copy(user_pw)
 pw = driver.find_element(By.CSS_SELECTOR, "#pw")
-pw.send_keys(user_pw)
+pw.send_keys(Keys.CONTROL, 'v')
+# pw.send_keys(user_pw)
 time.sleep(1)
 
 # 로그인 버튼 클릭
-# driver.find_element(By.CSS_SELECTOR, "#log\.login").click()
+driver.find_element(By.CSS_SELECTOR, "#log\\.login").click()
+
