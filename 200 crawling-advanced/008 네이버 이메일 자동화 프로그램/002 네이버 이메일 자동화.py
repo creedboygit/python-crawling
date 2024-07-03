@@ -52,17 +52,14 @@ time.sleep(1)
 
 # 로그인 버튼 클릭
 driver.find_element(By.CSS_SELECTOR, "#log\\.login").click()
-
 time.sleep(1)
 
 # 네이버 메인 페이지로 이동
 driver.get("https://naver.com")
-
 time.sleep(1)
 
 # 드롭다운 메뉴 클릭 (새로운 창이 열림)
 driver.find_element(By.CSS_SELECTOR, "#shortcutArea > ul > li:nth-child(1) > a > span.service_name").click()
-
 time.sleep(1)
 
 # 현재 열려있는 창 리스트
@@ -89,7 +86,6 @@ driver.switch_to.frame(iframe)
 
 # 내용 입력
 driver.find_element(By.CSS_SELECTOR, "body > div > div.workseditor-content").send_keys("내용입니다.")
-
 time.sleep(1)
 
 # 원래 창 선택
@@ -97,7 +93,6 @@ driver.switch_to.default_content()
 
 # 보내기 버튼 클릭
 driver.find_element(By.CSS_SELECTOR, "#content > div.mail_toolbar.type_write > div:nth-child(1) > div > button.button_write_task").click()
-
 time.sleep(1)
 
 # 모든 창 닫기
