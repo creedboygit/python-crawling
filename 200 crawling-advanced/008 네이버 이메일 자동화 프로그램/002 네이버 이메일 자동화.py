@@ -19,9 +19,9 @@ user_id = os.getenv('user_id')
 user_pw = os.getenv('user_pw')
 to_email = os.getenv('to_email')
 
-# ic(user_id)
-# ic(user_pw)
-# ic(to_email)
+ic(user_id)
+ic(user_pw)
+ic(to_email)
 
 # ChromeOptions 객체 생성
 chrome_options = Options()
