@@ -27,3 +27,13 @@ search.send_keys("카즈하")
 
 # 순차적 키 입력
 search.send_keys(Keys.CONTROL, 'a')
+search.send_keys(Keys.CONTROL, 'c')
+search.send_keys(Keys.CONTROL, 'v')
+search.send_keys(Keys.CONTROL, 'v')
+
+# 순차적 키 입력
+search.clear()
+search.send_keys("벤츠", Keys.ENTER)
+
+# tab
+search.send_keys("검색어1", Keys.TAB, "검색어2")
