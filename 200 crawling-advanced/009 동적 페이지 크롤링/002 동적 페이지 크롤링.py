@@ -20,4 +20,12 @@ soup = BeautifulSoup(source, "lxml")
 # ic(soup)
 
 product_name = soup.select_one(".product-name").text
-ic(product_name)
+# ic(product_name)
+
+items = soup.select(".product")
+for item in items:
+    category = item.select_one(".product-category").text
+    name = item.select_one(".product-name").text
+    link = item.select_one(".product-name > a").attrs["href"]
+    price = item.select_one(".product-price").text.split('원')[0].replace(',', '')
+    ic(category, name, link, price)
