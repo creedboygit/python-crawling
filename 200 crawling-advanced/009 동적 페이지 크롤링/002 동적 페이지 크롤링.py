@@ -1,12 +1,7 @@
 from selenium import webdriver
-from icecream import ic
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-import time
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.select import Select
+from bs4 import BeautifulSoup
+from icecream import ic
 
 # ChromeOptions 객체 생성
 chrome_options = Options()
@@ -17,3 +12,12 @@ driver = webdriver.Chrome(options=chrome_options)
 
 # 페이지 이동
 driver.get("https://startcoding.pythonanywhere.com/dynamic")
+
+source = driver.page_source
+# ic(source)
+
+soup = BeautifulSoup(source, "lxml")
+# ic(soup)
+
+product_name = soup.select_one(".product-name").text
+ic(product_name)
