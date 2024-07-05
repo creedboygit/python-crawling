@@ -3,6 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from icecream import ic
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 # ChromeOptions 객체 생성
 chrome_options = Options()
@@ -29,21 +31,36 @@ driver.get("https://startcoding.pythonanywhere.com/dynamic")
 # ic(scroll_height)
 
 # 페이지 끝까지 스크롤하기
-scroll_height = driver.execute_script("window.scrollTo(0, document.body.scrollHeight); return document.body.scrollHeight;")
-ic(scroll_height)
+# scroll_height = driver.execute_script("window.scrollTo(0, document.body.scrollHeight); return document.body.scrollHeight;")
+# ic(scroll_height)
+#
+# time.sleep(1)
+#
+#
+# scroll_height = driver.execute_script("window.scrollTo(0, document.body.scrollHeight); return document.body.scrollHeight;")
+# ic(scroll_height)
+#
+# time.sleep(1)
+#
+# scroll_height = driver.execute_script("window.scrollTo(0, document.body.scrollHeight); return document.body.scrollHeight;")
+# ic(scroll_height)
+#
+# time.sleep(1)
+#
+# scroll_height = driver.execute_script("window.scrollTo(0, document.body.scrollHeight); return document.body.scrollHeight;")
+# ic(scroll_height)
 
-time.sleep(1)
+# 특정 요소로 스크롤하는 방법
+# tag = driver.find_element(By.CSS_SELECTOR, "#aside > div:nth-child(3) > div > div:nth-child(6)")
+# driver.execute_script("arguments[0].scrollIntoView(true)", tag)
 
+# 특정 요소가 나타날 때까지 스크롤
+while True:
+    try:
+        element = driver.find_element(By.CSS_SELECTOR, "#product-container > div:nth-child(30) > div")
+        break
+    except(Exception,):
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(1)
 
-scroll_height = driver.execute_script("window.scrollTo(0, document.body.scrollHeight); return document.body.scrollHeight;")
-ic(scroll_height)
-
-time.sleep(1)
-
-scroll_height = driver.execute_script("window.scrollTo(0, document.body.scrollHeight); return document.body.scrollHeight;")
-ic(scroll_height)
-
-time.sleep(1)
-
-scroll_height = driver.execute_script("window.scrollTo(0, document.body.scrollHeight); return document.body.scrollHeight;")
-ic(scroll_height)
+ic(element.text)
