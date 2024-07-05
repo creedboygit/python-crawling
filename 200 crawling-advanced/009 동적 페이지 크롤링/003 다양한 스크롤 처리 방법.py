@@ -34,6 +34,7 @@ ic(scroll_height)
 
 time.sleep(1)
 
+
 scroll_height = driver.execute_script("window.scrollTo(0, document.body.scrollHeight); return document.body.scrollHeight;")
 ic(scroll_height)
 
