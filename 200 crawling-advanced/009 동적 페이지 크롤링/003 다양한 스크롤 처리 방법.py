@@ -1,5 +1,6 @@
 import time
 from selenium import webdriver
+from selenium.common import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from icecream import ic
@@ -59,7 +60,8 @@ while True:
     try:
         element = driver.find_element(By.CSS_SELECTOR, "#product-container > div:nth-child(30) > div")
         break
-    except(Exception,):
+    # except (Exception, ):
+    except NoSuchElementException:
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(1)
 
