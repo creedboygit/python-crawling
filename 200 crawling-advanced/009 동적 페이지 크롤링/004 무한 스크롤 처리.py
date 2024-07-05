@@ -1,5 +1,6 @@
 import time
 
+from bs4 import BeautifulSoup
 from icecream import ic
 from selenium import webdriver
 from selenium.common import NoSuchElementException
@@ -22,3 +23,29 @@ last_height = driver.execute_script("return document.body.scrollHeight")
 while True:
     ### 스크롤 끝까지 내리기
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+    # 대기 시간 꼭 주기
+    time.sleep(1)
+
+    ### 스크롤 후 높이
+    new_height = driver.execute_script("return document.body.scrollHeight")
+
+    ### 스크롤 전, 스크롤 후 높이 비교 (if, break)
+    if new_height == last_height:
+        break
+
+    ### 스크롤 전 높이 업데이트
+    last_height = new_height
+
+#### 시작 - 데이터 추출
+source = driver.page_source
+soup = BeautifulSoup(source, "lxml")
+
+items = soup.select(".product")
+for item in items:
+    category = item.select_one(".product-category").text
+    name = item.select_one(".product-name").text
+    link = item.select_one(".product-name > a").attrs["href"]
+    price = item.select_one(".product-price").text.split('원')[0].replace(',', '')
+    ic(category, name, link, price)
+#### 종료 - 데이터 추출
