@@ -1,11 +1,10 @@
 import time
+
+from icecream import ic
 from selenium import webdriver
 from selenium.common import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
-from bs4 import BeautifulSoup
-from icecream import ic
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 
 # ChromeOptions 객체 생성
 chrome_options = Options()

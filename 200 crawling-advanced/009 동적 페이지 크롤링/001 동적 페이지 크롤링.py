@@ -1,7 +1,7 @@
 import requests
-from bs4 import BeautifulSoup
-from icecream import ic
 import urllib3
+from icecream import ic
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 header = dict()
