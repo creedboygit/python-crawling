@@ -32,9 +32,9 @@ time.sleep(1)
 element = driver.find_element(By.CSS_SELECTOR, "#listSizeSelectDiv > ul > li:nth-child(7) > a")
 
 ## 1. 태그를 보이게 만들고 클릭 실행
-driver.find_element(By.CSS_SELECTOR, "#listSizeSelectDiv > a").click()
-time.sleep(1)
-element.click()
+# driver.find_element(By.CSS_SELECTOR, "#listSizeSelectDiv > a").click()
+# time.sleep(1)
+# element.click()
 
 ## 2. 자바스크립트를 이용하여 강제로 클릭 실행
-# driver.execute_script("arguments[0].click();", element)
+driver.execute_script("arguments[0].click();", element)
