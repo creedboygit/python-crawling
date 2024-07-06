@@ -37,4 +37,17 @@ element = driver.find_element(By.CSS_SELECTOR, "#listSizeSelectDiv > ul > li:nth
 # element.click()
 
 ## 2. 자바스크립트를 이용하여 강제로 클릭 실행
+## StaleElementReferenceException 오류 발생하는 이유 : 페이지가 새로고침되어서 태그가 유효하지 않을 경우 발생
 driver.execute_script("arguments[0].click();", element)
+
+### 공지사항을 뺀 게시글 블럭 선택
+posts = driver.find_elements(By.CSS_SELECTOR, ".article-board.m-tcol-c:not(#upperArticleList) .article")
+# ic(len(posts))
+# ic(posts)
+
+i = 1
+for post in posts:
+    title = post.text
+    link = post.get_attribute('href')
+    ic(i, title, link)
+    i += 1
