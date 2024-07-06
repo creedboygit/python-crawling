@@ -64,12 +64,17 @@ for item in items:
     # price = item.select_one("span.price_num__S2p_v").text.split('원')[0].replace(',', '').strip()
     price = int(item.select_one("span.price_num__S2p_v").text.replace('원', '').replace(',', '').strip())
 
-    ## 구매건수
+    ### 구매건수
     ## 속성 선택자로 구매건수 추출
-    # [data - nclick *= purchase] > span > span > em
-    # 후손선택자 : [data-nclick*=purchase] em 로 표현 가능
+    ## [data - nclick *= purchase] > span > span > em
+    ## 후손선택자 : [data-nclick*=purchase] em 로 표현 가능
     if item.select_one("[data-nclick*=purchase] em"):  # 구매건수가 존재하면
-        purchase = item.select_one("[data-nclick*=purchase] em").text
+        purchase = item.select_one("[data-nclick*=purchase] em").text.replace(',', '')
+
+        ## 1.4만 등의 문자열 숫자로 전처리
+        if '만' in purchase:
+            ic(float(purchase.split('만')[0]))
+            purchase = int(float(purchase.split('만')[0]) * 10000)
     else:
         purchase = ''
 
