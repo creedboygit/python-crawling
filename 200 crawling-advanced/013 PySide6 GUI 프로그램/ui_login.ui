@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="login_btn">
    <property name="geometry">
     <rect>
      <x>112</x>
@@ -70,7 +70,7 @@
     <string>비밀번호</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="id">
    <property name="geometry">
     <rect>
      <x>160</x>
@@ -80,7 +80,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="pw">
    <property name="geometry">
     <rect>
      <x>160</x>
@@ -88,6 +88,12 @@
      <width>251</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::EchoMode::PasswordEchoOnEdit</enum>
+   </property>
+   <property name="placeholderText">
+    <string>비밀번호를 입력해주세요.</string>
    </property>
   </widget>
  </widget>
