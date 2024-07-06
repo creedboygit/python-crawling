@@ -19,7 +19,6 @@ driver = webdriver.Chrome(options=chrome_options)
 # driver.get("https://search.shopping.naver.com/search/all?query=%EC%9D%B4%EC%96%B4%ED%8F%B0")
 driver.get("https://search.shopping.naver.com/search/all?query=이어폰")
 
-
 ##### 무한 스크롤 - 시작
 ### 스크롤 전 높이 확인
 last_height = driver.execute_script("return document.body.scrollHeight")
@@ -52,18 +51,34 @@ items = soup.select(".product_item__MDtDF")
 
 result = []
 for item in items:
+
+    ## 상품명
     name = item.select_one(".product_title__Mmw2K > a").text
+
+    ## 링크
     link = item.select_one(".product_title__Mmw2K > a").attrs["href"]
+
+    ## 가격
     # price = item.select_one("div > div > div.product_info_area__xxCTi > div.product_price_area__eTg7I > strong > span.price > span.price_num__S2p_v > em").text
     # ic(price)
     # price = item.select_one("span.price_num__S2p_v").text.split('원')[0].replace(',', '').strip()
     price = int(item.select_one("span.price_num__S2p_v").text.replace('원', '').replace(',', '').strip())
-    # ic(name, link, price)
-    result.append([name, link, price])
+
+    ## 구매건수
+    ## 속성 선택자로 구매건수 추출
+    # [data - nclick *= purchase] > span > span > em
+    # 후손선택자 : [data-nclick*=purchase] em 로 표현 가능
+    if item.select_one("[data-nclick*=purchase] em"):  # 구매건수가 존재하면
+        purchase = item.select_one("[data-nclick*=purchase] em").text
+    else:
+        purchase = ''
+
+    ic(name, link, price, purchase)
+    result.append([name, link, price, purchase])
 
 ##### 상품명, 상세페이지 링크, 가격 추출 - 종료
 
 ##### 엑셀 저장 - 시작
-df = pd.DataFrame(result, columns=['상품명', '상세페이지링크', '가격'])
+df = pd.DataFrame(result, columns=['상품명', '상세페이지링크', '가격', '구매건수'])
 df.to_excel('result.xlsx', index=False)
 ##### 엑셀 저장 - 종료
