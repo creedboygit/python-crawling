@@ -1,0 +1,8 @@
+# ui 파일을 py로 변환하기
+
+1. 전체 명령 프롬프트에서
+pip install pyside6
+설치
+
+2. ui 파일이 있는 곳으로 가서 명령창 연 다음
+3. pyside6-uic 원본.ui -o 변환할파일명.py
