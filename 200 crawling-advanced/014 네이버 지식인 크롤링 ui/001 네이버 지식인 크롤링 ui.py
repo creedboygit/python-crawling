@@ -5,7 +5,6 @@ from PySide6.QtWidgets import QApplication, QWidget
 from ui_naver_kin import Ui_Form
 import requests
 from bs4 import BeautifulSoup
-from icecream import ic
 import pandas as pd
 
 
@@ -73,9 +72,14 @@ class MainWindow(QWidget, Ui_Form):
         sys.exit()
 
 
-app = QApplication()
+if __name__ == "__main__":
+    try:
+        app = QApplication(sys.argv)
 
-window = MainWindow()
-window.show()
+        window = MainWindow()
+        window.show()
 
-sys.exit(app.exec())
+        sys.exit(app.exec())
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        input("Press Enter to exit...")
