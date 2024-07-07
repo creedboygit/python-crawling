@@ -59,15 +59,15 @@ class Ui_Form(object):
 
         self.formLayout.setWidget(0, QFormLayout.LabelRole, self.label)
 
-        self.lineEdit = QLineEdit(Form)
-        self.lineEdit.setObjectName(u"lineEdit")
+        self.keyword = QLineEdit(Form)
+        self.keyword.setObjectName(u"keyword")
         font2 = QFont()
         font2.setFamilies([u"\ub098\ub214\uc2a4\ud018\uc5b4 ExtraBold"])
         font2.setPointSize(14)
         font2.setBold(True)
-        self.lineEdit.setFont(font2)
+        self.keyword.setFont(font2)
 
-        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.lineEdit)
+        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.keyword)
 
         self.label_2 = QLabel(Form)
         self.label_2.setObjectName(u"label_2")
@@ -75,11 +75,11 @@ class Ui_Form(object):
 
         self.formLayout.setWidget(1, QFormLayout.LabelRole, self.label_2)
 
-        self.lineEdit_2 = QLineEdit(Form)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setFont(font2)
+        self.page = QLineEdit(Form)
+        self.page.setObjectName(u"page")
+        self.page.setFont(font2)
 
-        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lineEdit_2)
+        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.page)
 
 
         self.verticalLayout_2.addLayout(self.formLayout)
@@ -94,33 +94,33 @@ class Ui_Form(object):
 
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.pushButton = QPushButton(Form)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setFont(font1)
+        self.start_btn = QPushButton(Form)
+        self.start_btn.setObjectName(u"start_btn")
+        self.start_btn.setFont(font1)
 
-        self.verticalLayout.addWidget(self.pushButton)
+        self.verticalLayout.addWidget(self.start_btn)
 
-        self.pushButton_4 = QPushButton(Form)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setFont(font1)
+        self.reset_btn = QPushButton(Form)
+        self.reset_btn.setObjectName(u"reset_btn")
+        self.reset_btn.setFont(font1)
 
-        self.verticalLayout.addWidget(self.pushButton_4)
+        self.verticalLayout.addWidget(self.reset_btn)
 
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout.addItem(self.verticalSpacer)
 
-        self.pushButton_3 = QPushButton(Form)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setFont(font1)
+        self.save_btn = QPushButton(Form)
+        self.save_btn.setObjectName(u"save_btn")
+        self.save_btn.setFont(font1)
 
-        self.verticalLayout.addWidget(self.pushButton_3)
+        self.verticalLayout.addWidget(self.save_btn)
 
-        self.pushButton_2 = QPushButton(Form)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setFont(font1)
+        self.quit_btn = QPushButton(Form)
+        self.quit_btn.setObjectName(u"quit_btn")
+        self.quit_btn.setFont(font1)
 
-        self.verticalLayout.addWidget(self.pushButton_2)
+        self.verticalLayout.addWidget(self.quit_btn)
 
 
         self.horizontalLayout.addLayout(self.verticalLayout)
@@ -142,9 +142,9 @@ class Ui_Form(object):
         self.label_3.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" color:#02cb1c;\">\ub124\uc774\ubc84 \uc9c0\uc2dd\uc778 \ud06c\ub864\ub9c1</span></p></body></html>", None))
         self.label.setText(QCoreApplication.translate("Form", u"\ud0a4\uc6cc\ub4dc", None))
         self.label_2.setText(QCoreApplication.translate("Form", u"\ud398\uc774\uc9c0\uc218", None))
-        self.pushButton.setText(QCoreApplication.translate("Form", u"\ucd94\ucd9c\uc2dc\uc791", None))
-        self.pushButton_4.setText(QCoreApplication.translate("Form", u"\ub9ac\uc14b", None))
-        self.pushButton_3.setText(QCoreApplication.translate("Form", u"\uc800\uc7a5", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Form", u"\uc885\ub8cc", None))
+        self.start_btn.setText(QCoreApplication.translate("Form", u"\ucd94\ucd9c\uc2dc\uc791", None))
+        self.reset_btn.setText(QCoreApplication.translate("Form", u"\ub9ac\uc14b", None))
+        self.save_btn.setText(QCoreApplication.translate("Form", u"\uc800\uc7a5", None))
+        self.quit_btn.setText(QCoreApplication.translate("Form", u"\uc885\ub8cc", None))
     # retranslateUi
 
