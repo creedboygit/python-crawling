@@ -4,6 +4,8 @@ from ui_naver_kin import Ui_Form
 import requests
 from bs4 import BeautifulSoup
 from icecream import ic
+import pandas as pd
+
 
 class MainWindow(QWidget, Ui_Form):
     def __init__(self):
@@ -21,6 +23,7 @@ class MainWindow(QWidget, Ui_Form):
         input_keyword = self.keyword.text()
         input_page = int(self.page.text())
 
+        self.result = []
         for i in range(1, input_page + 1):
             ## 로그
             self.textBrowser.append(f"{i} 페이지 크롤링 중...")
@@ -38,17 +41,28 @@ class MainWindow(QWidget, Ui_Form):
 
                 ## 로그
                 self.textBrowser.append(title)
+                self.result.append([title, link, date, category, review])
+                QApplication.processEvents()  # 강제로 한줄 씩 flush 되도록
 
-                ic(title, link, date, category, review)
+                # ic(title, link, date, category, review)
 
         ## 로그
         self.textBrowser.append("크롤링 완료!")
 
     def reset(self):
-        print(f"리셋버튼클릭됨")
+        # print(f"리셋버튼클릭됨")
+        self.keyword.setText("")
+        self.page.setText("")
+        self.textBrowser.setText("")
+        self.keyword.setFocus()
 
     def save(self):
-        print(f"저장버튼클릭됨")
+        # print(f"저장버튼클릭됨")
+        input_keyword = self.keyword.text()
+
+        ## 데이터 프레임 생성
+        df = pd.DataFrame(self.result, columns=['제목', '링크', '날짜', '카테고리', '답변수'])
+        df.to_excel(f'{input_keyword}_네이버지식인크롤링.xlsx', index=False)
 
     def quit(self):
         print(f"종료버튼클릭됨")
