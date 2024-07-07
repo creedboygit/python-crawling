@@ -1,4 +1,6 @@
 import sys
+import time
+
 from PySide6.QtWidgets import QApplication, QWidget
 from ui_naver_kin import Ui_Form
 import requests
@@ -46,6 +48,8 @@ class MainWindow(QWidget, Ui_Form):
 
                 # ic(title, link, date, category, review)
 
+            time.sleep(1)
+
         ## 로그
         self.textBrowser.append("크롤링 완료!")
 
@@ -65,7 +69,8 @@ class MainWindow(QWidget, Ui_Form):
         df.to_excel(f'{input_keyword}_네이버지식인크롤링.xlsx', index=False)
 
     def quit(self):
-        print(f"종료버튼클릭됨")
+        # print(f"종료버튼클릭됨")
+        sys.exit()
 
 
 app = QApplication()
