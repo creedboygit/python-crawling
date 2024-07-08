@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_naver_kinXFwcUU.ui'
+## Form generated from reading UI file 'ui_naver_kinvKhffz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -36,7 +36,7 @@ class Ui_Form(object):
         self.label_3 = QLabel(Form)
         self.label_3.setObjectName(u"label_3")
         font = QFont()
-        font.setFamilies([u"Arial"])
+        font.setFamilies([u"Malgun Gothic"])
         font.setPointSize(19)
         font.setBold(True)
         self.label_3.setFont(font)
@@ -57,7 +57,7 @@ class Ui_Form(object):
         self.label = QLabel(Form)
         self.label.setObjectName(u"label")
         font1 = QFont()
-        font1.setFamilies([u"Arial"])
+        font1.setFamilies([u"Nanum Gothic"])
         font1.setPointSize(13)
         font1.setBold(True)
         self.label.setFont(font1)
@@ -76,7 +76,7 @@ class Ui_Form(object):
         self.keyword.setSizeIncrement(QSize(50, 0))
         self.keyword.setBaseSize(QSize(53, 0))
         font2 = QFont()
-        font2.setFamilies([u"Arial"])
+        font2.setFamilies([u"NanumGothic"])
         font2.setPointSize(14)
         font2.setBold(False)
         self.keyword.setFont(font2)
@@ -86,13 +86,21 @@ class Ui_Form(object):
 
         self.label_2 = QLabel(Form)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setFont(font1)
+        font3 = QFont()
+        font3.setFamilies([u"Malgun Gothic"])
+        font3.setPointSize(13)
+        font3.setBold(True)
+        self.label_2.setFont(font3)
 
         self.formLayout.setWidget(1, QFormLayout.LabelRole, self.label_2)
 
         self.page = QLineEdit(Form)
         self.page.setObjectName(u"page")
-        self.page.setFont(font2)
+        font4 = QFont()
+        font4.setFamilies([u"Malgun Gothic"])
+        font4.setPointSize(14)
+        font4.setBold(False)
+        self.page.setFont(font4)
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.page)
 
@@ -103,7 +111,11 @@ class Ui_Form(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.textBrowser = QTextBrowser(Form)
         self.textBrowser.setObjectName(u"textBrowser")
-        self.textBrowser.setFont(font2)
+        font5 = QFont()
+        font5.setFamilies([u"Arial"])
+        font5.setPointSize(14)
+        font5.setBold(False)
+        self.textBrowser.setFont(font5)
 
         self.horizontalLayout.addWidget(self.textBrowser)
 
@@ -111,13 +123,17 @@ class Ui_Form(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.start_btn = QPushButton(Form)
         self.start_btn.setObjectName(u"start_btn")
-        self.start_btn.setFont(font1)
+        font6 = QFont()
+        font6.setFamilies([u"Arial"])
+        font6.setPointSize(13)
+        font6.setBold(True)
+        self.start_btn.setFont(font6)
 
         self.verticalLayout.addWidget(self.start_btn)
 
         self.reset_btn = QPushButton(Form)
         self.reset_btn.setObjectName(u"reset_btn")
-        self.reset_btn.setFont(font1)
+        self.reset_btn.setFont(font6)
 
         self.verticalLayout.addWidget(self.reset_btn)
 
@@ -127,13 +143,13 @@ class Ui_Form(object):
 
         self.save_btn = QPushButton(Form)
         self.save_btn.setObjectName(u"save_btn")
-        self.save_btn.setFont(font1)
+        self.save_btn.setFont(font6)
 
         self.verticalLayout.addWidget(self.save_btn)
 
         self.quit_btn = QPushButton(Form)
         self.quit_btn.setObjectName(u"quit_btn")
-        self.quit_btn.setFont(font1)
+        self.quit_btn.setFont(font6)
 
         self.verticalLayout.addWidget(self.quit_btn)
 
