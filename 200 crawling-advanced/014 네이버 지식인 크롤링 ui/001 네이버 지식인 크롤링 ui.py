@@ -70,7 +70,7 @@ class MainWindow(QWidget, Ui_Form):
 
         # PyInstaller에서 실행되는 경우와 그렇지 않은 경우를 구분하여 저장 경로 설정
         if hasattr(sys, '_MEIPASS'):
-            current_directory = sys._MEIPASS
+            current_directory = os.path.dirname(sys.executable)
         else:
             current_directory = os.path.dirname(os.path.abspath(__file__))
 
