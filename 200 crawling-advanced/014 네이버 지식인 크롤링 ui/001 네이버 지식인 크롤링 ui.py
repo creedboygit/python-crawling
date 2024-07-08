@@ -91,10 +91,6 @@ if __name__ == "__main__":
     try:
         app = QApplication(sys.argv)
 
-        # 원하는 글꼴로 대체
-        if "NanumSquare ExtraBold" not in QFontDatabase().families():
-            app.setFont(QFont("Arial"))
-
         window = MainWindow()
         window.show()
 
