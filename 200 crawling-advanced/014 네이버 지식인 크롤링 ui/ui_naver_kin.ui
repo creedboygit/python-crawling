@@ -77,7 +77,7 @@
         <widget class="QLabel" name="label">
          <property name="font">
           <font>
-           <family>Nanum Gothic</family>
+           <family>Malgun Gothic</family>
            <pointsize>13</pointsize>
            <bold>true</bold>
           </font>
@@ -121,7 +121,7 @@
          </property>
          <property name="font">
           <font>
-           <family>NanumGothic</family>
+           <family>Malgun Gothic</family>
            <pointsize>14</pointsize>
            <bold>false</bold>
           </font>
@@ -177,7 +177,7 @@
           <widget class="QPushButton" name="start_btn">
            <property name="font">
             <font>
-             <family>Arial</family>
+             <family>Malgun Gothic</family>
              <pointsize>13</pointsize>
              <bold>true</bold>
             </font>
@@ -191,7 +191,7 @@
           <widget class="QPushButton" name="reset_btn">
            <property name="font">
             <font>
-             <family>Arial</family>
+             <family>Malgun Gothic</family>
              <pointsize>13</pointsize>
              <bold>true</bold>
             </font>
@@ -225,7 +225,7 @@
           <widget class="QPushButton" name="save_btn">
            <property name="font">
             <font>
-             <family>Arial</family>
+             <family>Malgun Gothic</family>
              <pointsize>13</pointsize>
              <bold>true</bold>
             </font>
@@ -239,7 +239,7 @@
           <widget class="QPushButton" name="quit_btn">
            <property name="font">
             <font>
-             <family>Arial</family>
+             <family>Malgun Gothic</family>
              <pointsize>13</pointsize>
              <bold>true</bold>
             </font>
