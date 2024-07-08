@@ -69,12 +69,15 @@ class MainWindow(QWidget, Ui_Form):
         input_keyword = self.keyword.text()
 
         # PyInstaller에서 실행되는 경우와 그렇지 않은 경우를 구분하여 저장 경로 설정
-        if hasattr(sys, '_MEIPASS'):
-            current_directory = os.path.dirname(sys.executable)  # 현재 폴더에 생성되도록 (dist)
-        else:
-            current_directory = os.path.dirname(os.path.abspath(__file__))
+        # if hasattr(sys, '_MEIPASS'):
+        #     current_directory = os.path.dirname(sys.executable)  # 현재 폴더에 생성되도록 (dist)
+        # else:
+        #     current_directory = os.path.dirname(os.path.abspath(__file__))
+        # save_path = os.path.join(current_directory, f"{input_keyword}_네이버지식인크롤링.xlsx")
 
-        save_path = os.path.join(current_directory, f"{input_keyword}_네이버지식인크롤링.xlsx")
+        # 사용자의 데스크톱 경로
+        desktop_directory = os.path.join(os.path.expanduser("~"), "Desktop")
+        save_path = os.path.join(desktop_directory, f"{input_keyword}_네이버지식인크롤링.xlsx")
 
         try:
             ## 데이터 프레임 생성
