@@ -82,7 +82,7 @@
          <property name="font">
           <font>
            <family>Malgun Gothic</family>
-           <pointsize>13</pointsize>
+           <pointsize>11</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -126,7 +126,7 @@
          <property name="font">
           <font>
            <family>Malgun Gothic</family>
-           <pointsize>14</pointsize>
+           <pointsize>11</pointsize>
            <bold>false</bold>
           </font>
          </property>
@@ -140,7 +140,7 @@
          <property name="font">
           <font>
            <family>Malgun Gothic</family>
-           <pointsize>13</pointsize>
+           <pointsize>11</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -154,7 +154,7 @@
          <property name="font">
           <font>
            <family>Malgun Gothic</family>
-           <pointsize>14</pointsize>
+           <pointsize>11</pointsize>
            <bold>false</bold>
           </font>
          </property>
@@ -168,8 +168,8 @@
         <widget class="QTextBrowser" name="textBrowser">
          <property name="font">
           <font>
-           <family>Arial</family>
-           <pointsize>14</pointsize>
+           <family>맑은 고딕</family>
+           <pointsize>10</pointsize>
            <bold>false</bold>
           </font>
          </property>
@@ -182,7 +182,7 @@
            <property name="font">
             <font>
              <family>Malgun Gothic</family>
-             <pointsize>13</pointsize>
+             <pointsize>11</pointsize>
              <bold>true</bold>
             </font>
            </property>
@@ -196,7 +196,7 @@
            <property name="font">
             <font>
              <family>Malgun Gothic</family>
-             <pointsize>13</pointsize>
+             <pointsize>11</pointsize>
              <bold>true</bold>
             </font>
            </property>
@@ -230,7 +230,7 @@
            <property name="font">
             <font>
              <family>Malgun Gothic</family>
-             <pointsize>13</pointsize>
+             <pointsize>11</pointsize>
              <bold>true</bold>
             </font>
            </property>
@@ -244,7 +244,7 @@
            <property name="font">
             <font>
              <family>Malgun Gothic</family>
-             <pointsize>13</pointsize>
+             <pointsize>11</pointsize>
              <bold>true</bold>
             </font>
            </property>

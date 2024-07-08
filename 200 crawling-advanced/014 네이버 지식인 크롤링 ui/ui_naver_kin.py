@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_naver_kinkzyRvV.ui'
+## Form generated from reading UI file 'ui_naver_kinQmjpVn.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -39,8 +39,10 @@ class Ui_Form(object):
         font.setFamilies([u"Malgun Gothic"])
         font.setPointSize(19)
         font.setBold(True)
+        font.setKerning(True)
         self.label_3.setFont(font)
         self.label_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.label_3.setIndent(0)
 
         self.verticalLayout_2.addWidget(self.label_3)
 
@@ -58,7 +60,7 @@ class Ui_Form(object):
         self.label.setObjectName(u"label")
         font1 = QFont()
         font1.setFamilies([u"Malgun Gothic"])
-        font1.setPointSize(13)
+        font1.setPointSize(11)
         font1.setBold(True)
         self.label.setFont(font1)
 
@@ -77,7 +79,7 @@ class Ui_Form(object):
         self.keyword.setBaseSize(QSize(53, 0))
         font2 = QFont()
         font2.setFamilies([u"Malgun Gothic"])
-        font2.setPointSize(14)
+        font2.setPointSize(11)
         font2.setBold(False)
         self.keyword.setFont(font2)
         self.keyword.setMaxLength(32783)
@@ -104,8 +106,8 @@ class Ui_Form(object):
         self.textBrowser = QTextBrowser(Form)
         self.textBrowser.setObjectName(u"textBrowser")
         font3 = QFont()
-        font3.setFamilies([u"Arial"])
-        font3.setPointSize(14)
+        font3.setFamilies([u"\ub9d1\uc740 \uace0\ub515"])
+        font3.setPointSize(10)
         font3.setBold(False)
         self.textBrowser.setFont(font3)
 
@@ -158,7 +160,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.label_3.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" color:#02cb1c;\">\ub124\uc774\ubc84 \uc9c0\uc2dd\uc778 \ud06c\ub864\ub9c1</span></p></body></html>", None))
+        self.label_3.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" color:#02cb1c;letter-spacing:-1.5px;\">\ub124\uc774\ubc84 \uc9c0\uc2dd\uc778 \ud06c\ub864\ub9c1</span></p></body></html>", None))
         self.label.setText(QCoreApplication.translate("Form", u"\ud0a4\uc6cc\ub4dc", None))
         self.label_2.setText(QCoreApplication.translate("Form", u"\ud398\uc774\uc9c0\uc218", None))
         self.start_btn.setText(QCoreApplication.translate("Form", u"\ucd94\ucd9c\uc2dc\uc791", None))
