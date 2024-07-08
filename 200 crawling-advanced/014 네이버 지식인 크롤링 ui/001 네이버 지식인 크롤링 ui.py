@@ -1,6 +1,8 @@
 import sys
 import time
+import os
 
+from PySide6.QtGui import QFontDatabase, QFont
 from PySide6.QtWidgets import QApplication, QWidget
 from ui_naver_kin import Ui_Form
 import requests
@@ -60,12 +62,25 @@ class MainWindow(QWidget, Ui_Form):
         self.keyword.setFocus()
 
     def save(self):
-        # print(f"저장버튼클릭됨")
+        print(f"저장버튼클릭됨")
         input_keyword = self.keyword.text()
 
-        ## 데이터 프레임 생성
-        df = pd.DataFrame(self.result, columns=['제목', '링크', '날짜', '카테고리', '답변수'])
-        df.to_excel(f'{input_keyword}_네이버지식인크롤링.xlsx', index=False)
+        # PyInstaller에서 실행되는 경우와 그렇지 않은 경우를 구분하여 저장 경로 설정
+        if hasattr(sys, '_MEIPASS'):
+            current_directory = sys._MEIPASS
+        else:
+            current_directory = os.path.dirname(os.path.abspath(__file__))
+
+        save_path = os.path.join(current_directory, f"{input_keyword}_네이버지식인크롤링.xlsx")
+
+        try:
+            ## 데이터 프레임 생성
+            df = pd.DataFrame(self.result, columns=['제목', '링크', '날짜', '카테고리', '답변수'])
+            df.to_excel(save_path, index=False)
+            self.textBrowser.append(f"저장 완료: {save_path}")
+        except Exception as e:
+            self.textBrowser.append(f"저장 중 오류 발생: {e}")
+
 
     def quit(self):
         # print(f"종료버튼클릭됨")
@@ -75,6 +90,10 @@ class MainWindow(QWidget, Ui_Form):
 if __name__ == "__main__":
     try:
         app = QApplication(sys.argv)
+
+        # 원하는 글꼴로 대체
+        if "NanumSquare ExtraBold" not in QFontDatabase().families():
+            app.setFont(QFont("Arial"))
 
         window = MainWindow()
         window.show()
