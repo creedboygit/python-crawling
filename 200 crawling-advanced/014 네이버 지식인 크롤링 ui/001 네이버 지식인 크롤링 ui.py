@@ -21,6 +21,7 @@ class MainWindow(QWidget, Ui_Form):
         self.save_btn.clicked.connect(self.save)
         self.quit_btn.clicked.connect(self.quit)
 
+    ### 시작 버튼
     def start(self):
         # print(f"시작버튼클릭됨")
         input_keyword = self.keyword.text()
@@ -54,6 +55,7 @@ class MainWindow(QWidget, Ui_Form):
         ## 로그
         self.textBrowser.append("크롤링 완료!")
 
+    ### 리셋 버튼
     def reset(self):
         # print(f"리셋버튼클릭됨")
         self.keyword.setText("")
@@ -61,6 +63,7 @@ class MainWindow(QWidget, Ui_Form):
         self.textBrowser.setText("")
         self.keyword.setFocus()
 
+    ### 저장 버튼
     def save(self):
         print(f"저장버튼클릭됨")
         input_keyword = self.keyword.text()
@@ -81,7 +84,7 @@ class MainWindow(QWidget, Ui_Form):
         except Exception as e:
             self.textBrowser.append(f"저장 중 오류 발생: {e}")
 
-
+    ### 종료 버튼
     def quit(self):
         # print(f"종료버튼클릭됨")
         sys.exit()
