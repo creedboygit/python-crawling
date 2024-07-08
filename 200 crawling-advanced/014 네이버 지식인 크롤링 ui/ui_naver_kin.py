@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_naver_kin.ui'
+## Form generated from reading UI file 'ui_naver_kinXFwcUU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -16,14 +16,15 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFormLayout, QGridLayout, QHBoxLayout,
-    QLabel, QLineEdit, QPushButton, QSizePolicy,
-    QSpacerItem, QTextBrowser, QVBoxLayout, QWidget)
+    QLabel, QLayout, QLineEdit, QPushButton,
+    QSizePolicy, QSpacerItem, QTextBrowser, QVBoxLayout,
+    QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(556, 620)
+        Form.resize(540, 682)
         self.gridLayout = QGridLayout(Form)
         self.gridLayout.setObjectName(u"gridLayout")
         self.verticalLayout_2 = QVBoxLayout()
@@ -35,8 +36,8 @@ class Ui_Form(object):
         self.label_3 = QLabel(Form)
         self.label_3.setObjectName(u"label_3")
         font = QFont()
-        font.setFamilies([u"\ub098\ub214\uc2a4\ud018\uc5b4 ExtraBold"])
-        font.setPointSize(16)
+        font.setFamilies([u"Arial"])
+        font.setPointSize(19)
         font.setBold(True)
         self.label_3.setFont(font)
         self.label_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -49,10 +50,14 @@ class Ui_Form(object):
 
         self.formLayout = QFormLayout()
         self.formLayout.setObjectName(u"formLayout")
+        self.formLayout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
+        self.formLayout.setFieldGrowthPolicy(QFormLayout.FieldGrowthPolicy.ExpandingFieldsGrow)
+        self.formLayout.setFormAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
+        self.formLayout.setContentsMargins(0, -1, -1, -1)
         self.label = QLabel(Form)
         self.label.setObjectName(u"label")
         font1 = QFont()
-        font1.setFamilies([u"\ub098\ub214\uc2a4\ud018\uc5b4 ExtraBold"])
+        font1.setFamilies([u"Arial"])
         font1.setPointSize(13)
         font1.setBold(True)
         self.label.setFont(font1)
@@ -61,11 +66,21 @@ class Ui_Form(object):
 
         self.keyword = QLineEdit(Form)
         self.keyword.setObjectName(u"keyword")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.keyword.sizePolicy().hasHeightForWidth())
+        self.keyword.setSizePolicy(sizePolicy)
+        self.keyword.setMinimumSize(QSize(0, 0))
+        self.keyword.setMaximumSize(QSize(16777215, 16777215))
+        self.keyword.setSizeIncrement(QSize(50, 0))
+        self.keyword.setBaseSize(QSize(53, 0))
         font2 = QFont()
-        font2.setFamilies([u"\ub098\ub214\uc2a4\ud018\uc5b4 ExtraBold"])
+        font2.setFamilies([u"Arial"])
         font2.setPointSize(14)
-        font2.setBold(True)
+        font2.setBold(False)
         self.keyword.setFont(font2)
+        self.keyword.setMaxLength(32783)
 
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.keyword)
 
