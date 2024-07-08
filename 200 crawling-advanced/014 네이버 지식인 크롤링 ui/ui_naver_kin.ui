@@ -36,13 +36,17 @@
          <family>Malgun Gothic</family>
          <pointsize>19</pointsize>
          <bold>true</bold>
+         <kerning>true</kerning>
         </font>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#02cb1c;&quot;&gt;네이버 지식인 크롤링&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#02cb1c;letter-spacing:-1.5px;&quot;&gt;네이버 지식인 크롤링&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+       <property name="indent">
+        <number>0</number>
        </property>
       </widget>
      </item>
