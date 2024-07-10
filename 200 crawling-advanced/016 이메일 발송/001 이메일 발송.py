@@ -25,9 +25,9 @@ def send_email(sender_email, sender_password, receiver_email, subject, body):
 
 
 # 사용 예시
-sender_email = "polozhzh@gmail.com"
-sender_password = "kvde oxlc agab yquu"
-receiver_email = "polozh@naver.com"
+sender_email = ""
+sender_password = ""
+receiver_email = ""
 subject = "테스트 이메일"
 body = "이것은 파이썬을 사용하여 보낸 테스트 이메일입니다."
 
