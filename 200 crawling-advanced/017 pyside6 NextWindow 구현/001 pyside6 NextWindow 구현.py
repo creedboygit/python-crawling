@@ -32,7 +32,7 @@ class KeyInputWindow(QWidget):
             self.input_field.clear()
 
     def keyPressEvent(self, event):
-        if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
+        if event.key() == Qt.EnterKeyType:
             self.check_key()
         else:
             super().keyPressEvent(event)
