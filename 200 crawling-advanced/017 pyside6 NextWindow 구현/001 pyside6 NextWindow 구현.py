@@ -2,6 +2,7 @@ import sys
 from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton
 from PySide6.QtCore import Qt
 
+
 class KeyInputWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -37,6 +38,7 @@ class KeyInputWindow(QWidget):
         else:
             super().keyPressEvent(event)
 
+
 class NextWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -47,6 +49,7 @@ class NextWindow(QWidget):
         layout.addWidget(self.label)
 
         self.setLayout(layout)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
