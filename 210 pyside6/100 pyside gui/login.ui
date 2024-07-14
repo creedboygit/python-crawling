@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>378</width>
-    <height>322</height>
+    <height>386</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>30</y>
+      <y>80</y>
       <width>311</width>
       <height>233</height>
      </rect>
@@ -123,7 +123,7 @@ color:white;</string>
       <x>0</x>
       <y>0</y>
       <width>391</width>
-      <height>281</height>
+      <height>411</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -133,8 +133,28 @@ color:white;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>30</y>
+      <width>211</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>리치레전드 프로그램</string>
+    </property>
+   </widget>
    <zorder>label</zorder>
    <zorder>gridLayoutWidget</zorder>
+   <zorder>label_4</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

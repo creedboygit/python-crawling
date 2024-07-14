@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginAOFWbW.ui'
+## Form generated from reading UI file 'loginnQMeqV.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -23,12 +23,12 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(378, 322)
+        MainWindow.resize(378, 386)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayoutWidget = QWidget(self.centralwidget)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(30, 30, 311, 233))
+        self.gridLayoutWidget.setGeometry(QRect(30, 80, 311, 233))
         self.gridLayout = QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -74,11 +74,19 @@ class Ui_MainWindow(object):
 
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(0, 0, 391, 281))
+        self.label.setGeometry(QRect(0, 0, 391, 411))
         self.label.setStyleSheet(u"background-color:white;")
+        self.label_4 = QLabel(self.centralwidget)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(80, 30, 211, 41))
+        font1 = QFont()
+        font1.setPointSize(16)
+        font1.setBold(True)
+        self.label_4.setFont(font1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.label.raise_()
         self.gridLayoutWidget.raise_()
+        self.label_4.raise_()
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 378, 22))
@@ -100,5 +108,6 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\uc544\uc774\ub514", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\ub85c\uadf8\uc778", None))
         self.label.setText("")
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"\ub9ac\uce58\ub808\uc804\ub4dc \ud504\ub85c\uadf8\ub7a8", None))
     # retranslateUi
 
