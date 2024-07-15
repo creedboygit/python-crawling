@@ -34,7 +34,6 @@ class AuthWindow(QWidget, Ui_Form):
         return json
 
 
-
 class LoginWindow(QWidget, Ui_Dialog):
     def __init__(self):
         super().__init__()
