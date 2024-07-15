@@ -30,9 +30,9 @@ class Ui_Form(object):
         font.setPointSize(13)
         font.setBold(True)
         self.label.setFont(font)
-        self.lineEdit = QLineEdit(Form)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(90, 70, 221, 31))
+        self.auth_key_input = QLineEdit(Form)
+        self.auth_key_input.setObjectName(u"lineEdit")
+        self.auth_key_input.setGeometry(QRect(90, 70, 221, 31))
         self.login_btn = QPushButton(Form)
         self.login_btn.setObjectName(u"login_btn")
         self.login_btn.setGeometry(QRect(110, 120, 191, 31))
@@ -49,7 +49,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.label.setText(QCoreApplication.translate("Form", u"\uc778\uc99d\ud0a4", None))
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("Form", u"\uc778\uc99d\ud0a4\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694.", None))
+        self.auth_key_input.setPlaceholderText(QCoreApplication.translate("Form", u"\uc778\uc99d\ud0a4\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694.", None))
         self.login_btn.setText(QCoreApplication.translate("Form", u"\uc778\uc99d", None))
     # retranslateUi
 
