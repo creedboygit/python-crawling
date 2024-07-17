@@ -18,9 +18,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 # user_id = os.getenv('user_id')
 # user_pw = os.getenv('user_pw')
 
-user_id = input("아이디를 입력해 주세요: ")
+# user_id = input("아이디를 입력해 주세요: ")
 # user_pw = input("비밀번호를 입력해 주세요: ")
-user_pw = pwinput("비밀번호를 입력해 주세요: ", mask="*")
+# user_pw = pwinput("비밀번호를 입력해 주세요: ", mask="*")
 
 def setup_driver():
     chrome_options = Options()
@@ -57,17 +57,17 @@ def login_to_naver(driver):
     time.sleep(1)
     wait = WebDriverWait(driver, 10)
 
-    id_field = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "#id")))
-    input_text_via_clipboard(driver, id_field, user_id)
-
-    pw_field = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "#pw")))
-    input_text_via_clipboard(driver, pw_field, user_pw)
-
-    login_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#log\\.login")))
-    login_button.click()
+    # id_field = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "#id")))
+    # input_text_via_clipboard(driver, id_field, user_id)
+    #
+    # pw_field = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "#pw")))
+    # input_text_via_clipboard(driver, pw_field, user_pw)
+    #
+    # login_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#log\\.login")))
+    # login_button.click()
     time.sleep(1)
 
-    input("캡차가 나타나면 직접 입력한 후 Enter를 눌러주세요...")
+    # input("캡차가 나타나면 직접 입력한 후 Enter를 눌러주세요...")
 
     try:
         wait.until(EC.url_contains("https://mail.naver.com/"))
