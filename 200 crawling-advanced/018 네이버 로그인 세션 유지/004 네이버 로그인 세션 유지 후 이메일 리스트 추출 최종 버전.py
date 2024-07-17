@@ -10,7 +10,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 import pyperclip
 import requests
-from bs4 import BeautifulSoup
+import json
 
 user_id = os.getenv('user_id')
 user_pw = os.getenv('user_pw')
@@ -73,77 +73,47 @@ def login_to_naver(driver):
         return False
 
 
-def get_naver_cookies(driver):
-    return driver.get_cookies()
-
-
-def verify_login(session):
-    response = session.get('https://mail.naver.com/')
-    soup = BeautifulSoup(response.text, 'html.parser')
-
-    # 로그인 상태 확인
-    if "로그아웃" in response.text:
-        print("로그인 상태가 유지되고 있습니다.")
-        return True
-    else:
-        print("로그인 상태가 유지되지 않고 있습니다.")
-        return False
-
-
 def get_email_list(session):
-    response = session.get('https://mail.naver.com/')
-    soup = BeautifulSoup(response.text, 'html.parser')
+    url = "https://mail.naver.com/json/list?folderSN=-1&startOffset=1&pageSize4SeeMore=100&viewMode=time&previewMode=2&sortField=1&sortType=0&u="
+    response = session.post(url)
 
-    # 디버깅: HTML 내용 출력
-    print("HTML 내용:")
-    print(response.text[:1000])  # 처음 1000자만 출력
+    if response.status_code == 200:
+        data = json.loads(response.text)
+        emails = []
 
-    emails = []
-    email_list = soup.select('.mail_item')
-    print(f"찾은 이메일 항목 수: {len(email_list)}")
+        for item in data.get('mailData', []):
+            email = {
+                'subject': item.get('subject', ''),
+                'sender': item.get('from', {}).get('name', ''),
+                'date': item.get('receivedTime', ''),
+                'volume': item.get('size', '')
+            }
+            emails.append(email)
 
-    for email in email_list:
-        try:
-            subject = email.select_one('.mail_title_link .text').text.strip()
-            sender = email.select_one('.button_sender').text.strip()
-            date = email.select_one('.mail_date').text.strip()
-            volume = email.select_one('.mail_volume').text.strip()
-            emails.append({
-                'subject': subject,
-                'sender': sender,
-                'date': date,
-                'volume': volume
-            })
-        except Exception as e:
-            print(f"Error extracting email info: {e}")
-
-    return emails
+        return emails
+    else:
+        print(f"이메일 목록을 가져오는데 실패했습니다. 상태 코드: {response.status_code}")
+        return []
 
 
 def main():
     driver = setup_driver()
     if login_to_naver(driver):
-        cookies = get_naver_cookies(driver)
+        cookies = driver.get_cookies()
         driver.quit()
 
         session = requests.Session()
         for cookie in cookies:
-            c = {cookie['name']: cookie['value']}
             session.cookies.set(cookie['name'], cookie['value'])
-            session.cookies.update(c)
-        print(session.cookies)
 
-        if verify_login(session):
-            emails = get_email_list(session)
-            print(f"총 {len(emails)}개의 이메일을 가져왔습니다.")
-            for email in emails:
-                print(f"제목: {email['subject']}")
-                print(f"보낸사람: {email['sender']}")
-                print(f"날짜: {email['date']}")
-                print(f"용량: {email['volume']}")
-                print("-" * 50)
-        else:
-            print("로그인 세션이 유지되지 않아 이메일을 가져올 수 없습니다.")
+        emails = get_email_list(session)
+        print(f"총 {len(emails)}개의 이메일을 가져왔습니다.")
+        for email in emails:
+            print(f"제목: {email['subject']}")
+            print(f"보낸사람: {email['sender']}")
+            print(f"날짜: {email['date']}")
+            print(f"용량: {email['volume']}")
+            print("-" * 50)
     else:
         print("로그인에 실패했습니다.")
 
