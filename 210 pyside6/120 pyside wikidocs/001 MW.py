@@ -3,7 +3,9 @@
 import sys
 import PyQt6.QtCore
 from PyQt6.QtWidgets import (QApplication, QWidget,
-                               QLabel)
+                             QLabel)
+
+
 # ---------------------------------
 # PySide6 용 module
 # import PySide6.QtCore
@@ -24,13 +26,14 @@ class MW(QWidget):
         self.setGeometry(200, 100, 400, 200)
         self.setWindowTitle("Main Window in PyQt")
         self.setup_main_wnd()
-        self.show() # Display the window on the screen
+        self.show()  # Display the window on the screen
 
     def setup_main_wnd(self):
         """set up the main window."""
         hello_label = QLabel(self)
         hello_label.setText('Hello, World and Qt!')
-        hello_label.move(150,90)
+        hello_label.move(150, 90)
+
 
 # ===============================
 # Run the program
@@ -42,7 +45,7 @@ if __name__ == '__main__':
 
     # -----------------------------
     # PyQt6 관련 부분.
-    print(PyQt6.QtCore.qVersion()) # PyQt6 버전 check.
+    print(PyQt6.QtCore.qVersion())  # PyQt6 버전 check.
 
     # Event Loop 등을 위한 QApplication instance 생성.
     app = QApplication(sys.argv)
