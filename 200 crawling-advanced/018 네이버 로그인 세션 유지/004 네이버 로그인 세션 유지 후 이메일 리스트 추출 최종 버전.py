@@ -15,8 +15,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-# user_id = os.getenv('user_id')
-# user_pw = os.getenv('user_pw')
+user_id = os.getenv('user_id')
+user_pw = os.getenv('user_pw')
 
 # user_id = input("아이디를 입력해 주세요: ")
 # user_pw = input("비밀번호를 입력해 주세요: ")
