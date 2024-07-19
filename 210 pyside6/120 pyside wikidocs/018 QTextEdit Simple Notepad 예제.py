@@ -62,10 +62,13 @@ class MW(QMainWindow):
 
     def save_text(self):
         # 텍스트를 파일로 저장
-        filename, _ = QFileDialog.getSaveFileName(self, "Save File")
+        # filename, _ = QFileDialog.getSaveFileName(self, "Save File")
+        filename, selected_filter = QFileDialog.getSaveFileName(self, "Save File", "", "Text Files (*.txt);;Python Files (*.py)")
         if filename:
             with open(filename, 'w') as file:
                 file.write(self.textEdit.toPlainText())
+
+        print(f"Saved file: {filename} with filter: {selected_filter}")
 
 
 if __name__ == '__main__':
