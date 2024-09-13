@@ -8,12 +8,16 @@ import keyboard
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 
 # 프로그램 실행 상태를 제어하는 플래그
+
 running = False
 
-def auto_click(left_top, right_bottom, clicks_per_second=14):
-    duration = random.uniform(19, 21)  # 19초에서 21초 사이의 랜덤한 시간 설정
+def auto_click(left_top, right_bottom, clicks_per_second=11):
+    
+
+    duration = random.uniform(26, 28)  # 지속 시간 랜덤한 시간 설정
     end_time = time.time() + duration
     click_count = 0
+
     while time.time() < end_time and running:
         x = random.randint(left_top[0], right_bottom[0])
         y = random.randint(left_top[1], right_bottom[1])
@@ -29,8 +33,8 @@ def main():
     left_top = (5012, 1290)  # 왼쪽 상단 좌표
     right_bottom = (5042, 1309)  # 오른쪽 하단 좌표
 
-    logging.info("엔터 키를 눌러 시작하세요. 프로그램 실행 중 F7 키를 누르면 종료됩니다.")
-    keyboard.wait('enter')
+    logging.info("F7 키를 눌러 시작하세요. 프로그램 실행 중 F8 키를 누르면 종료됩니다.")
+    keyboard.wait('f7')
     running = True
     logging.info("프로그램이 시작되었습니다.")
 
@@ -59,5 +63,5 @@ def stop_program():
     logging.info("프로그램이 중지되었습니다.")
 
 if __name__ == "__main__":
-    keyboard.on_press_key('f7', lambda _: stop_program())
+    keyboard.on_press_key('f8', lambda _: stop_program())
     main()
