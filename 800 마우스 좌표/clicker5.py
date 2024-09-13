@@ -44,7 +44,7 @@ def main():
         logging.info(f"라운드 {round_number} 완료: {clicks}번 클릭 (지속 시간: {actual_duration:.2f}초)")
 
         if running:
-            pause_time = random.uniform(16, 24)
+            pause_time = random.uniform(13, 16)
             logging.info(f"{pause_time:.2f}초 동안 일시 정지")
             start_pause = time.time()
             while time.time() - start_pause < pause_time and running:
